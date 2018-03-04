@@ -1,13 +1,13 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-color:#E7E7E7;
+  font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+  background-color: #e7e7e7;
 }
 
 main {
-  width:500px;
-  margin:0 auto;
-  padding-top:40px;
+  width: 500px;
+  margin: 0 auto;
+  padding-top: 40px;
 }
 
 .hide {
@@ -15,74 +15,72 @@ main {
 }
 
 #create {
-  margin-bottom:40px;
+  margin-bottom: 40px;
 }
 
 .strike {
-    opacity:0.5;
-    position: relative;
-    display: inline-block;
+  opacity: 0.5;
+  position: relative;
+  display: inline-block;
 }
 .strike::before {
-    content: '';
-    border-bottom: 2px solid #a7a7a7;
-    width: 100%;
-    position: absolute;
-    right: 0;
-    top: 50%;
+  content: '';
+  border-bottom: 2px solid #a7a7a7;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  top: 50%;
 }
 
 .explain {
-  margin-bottom:40px;
+  margin-bottom: 40px;
 }
 
 #create {
-padding:0 80px;
+  padding: 0 80px;
 }
 
-#result  {
-  padding:0 40px;
-  margin:40px 0;
+#result {
+  padding: 0 40px;
+  margin: 40px 0;
 }
 
-#result ul{
+#result ul {
   list-style: none;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
 }
 
 .bg-warning {
-  padding:10px;
-  background-color:#EADDAB !important;
+  background-color: #eaddab !important;
 }
+
 #result ul li {
-  width:100%;
+  width: 100%;
   overflow: hidden;
-  margin-bottom:15px;
+  margin-bottom: 15px;
 }
 
 #result ul li .btn {
-  margin-right:10px;
-  color:white;
-  float:right;
+  margin-right: 10px;
+  color: white;
+  float: right;
 }
 
 #result ul li span {
-  display:block;
-  padding-top:4px;
-  float:left;
-  font-weight:bold;
-  line-height:20px;
-  font-size:20px;
-  margin-right:20px;
+  display: block;
+  padding-top: 4px;
+  float: left;
+  font-weight: bold;
+  line-height: 20px;
+  font-size: 20px;
+  margin-right: 20px;
 }
-
 
 h1 {
   margin-bottom: 50px;
-    text-align: center;
-    font-weight: 800;
-    font-size:50px;
-    color:#5F5F5F;
+  text-align: center;
+  font-weight: 800;
+  font-size: 50px;
+  color: #5f5f5f;
 }
-
