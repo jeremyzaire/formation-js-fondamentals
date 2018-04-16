@@ -11,7 +11,7 @@
   // Appeler la fonction result
 
   // Exercice Object
-  // Créer un objet appelé todoItem
+  // Créer un objet appelé todoItemData
   // 1 => Ajouter 2 keys nommées label et id avec comme value 'label one' et 1
   // 2 => Créer une troisieme key appelée button, cette key doit contenir un object
   // 3 => Dans cet objet button, créer une key nommée label avec la value 'done'
@@ -23,7 +23,7 @@
 
   // <ul>
   //   <li data-id="1">
-  //   <span>Todo 1</span><a href="#" class="btn btn-sm btn-success">Done</a>
+  //     <span>Todo 1</span><a href="#" class="btn btn-sm btn-success">Done</a>
   //   </li>
   // <ul>
 
