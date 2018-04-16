@@ -15,7 +15,7 @@
   // 1 => Ajouter 2 keys nommées label et id avec comme value 'label one' et 1
   // 2 => Créer une troisieme key appelée button, cette key doit contenir un object
   // 3 => Dans cet objet button, créer une key nommée label avec la value 'done'
-  // 4 => Ajouter une key 'class' qui contient un array de 3 strings "btn", "btn-sm", "btn-success"
+  // 4 => Ajouter une key 'classes' qui contient un array de 3 strings "btn", "btn-sm", "btn-success"
   // 5 => Afficher dans la console 'label one', 'btn-success', 1 -> console.log()
   // Bonus => afficher 'btn-sm' avec 2 notations différentes
 
