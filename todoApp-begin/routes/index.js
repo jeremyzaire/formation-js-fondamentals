@@ -12,7 +12,7 @@ router.post('/', function(req, res, next) {
 
 router.post('/add', function(req, res, next) {
   var rslt = {
-    ts: new Date().getTime(),
+    id: new Date().getTime(),
     label: req.body.val,
     button: {
       value: 'done',
