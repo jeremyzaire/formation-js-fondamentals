@@ -29,10 +29,10 @@
 
   // Récuperer le div qui contient l'ID result
   // 1 => Créer un élement ul
-  // 2 => Créer un li avec l'attribut data-id="1" -> récuperer la valeur 1 dans le l'array collection -> setAttribute()
-  // 3 => Insérer dans le li un element span avec la valeur du premier item de l'array collection -> collection[0]
-  // 4 => Insérer dans le li un un element a avec les class suivantes "btn btn-sm btn-success" -> classList.add()
-  // 5 => Cette élement doit avoir comme valeur le deuxieme item de l'array collection -> collection[1]
+  // 2 => Créer un li avec l'attribut data-id="1" -> récuperer la valeur 1 dans le l'array todoItemData -> setAttribute()
+  // 3 => Insérer dans le li un element span avec la valeur du premier item de l'array todoItemData -> todoItemData[0]
+  // 4 => Insérer dans le li un un element a avec les classes suivantes "btn btn-sm btn-success" -> classList.add()
+  // 5 => Cette élement doit avoir comme valeur la propriétré "label" de l'objet todoItemData.button
   // 6 => Inserer le li dans le ul
 
   // displayTodoItem(todoItemData);
@@ -46,7 +46,7 @@
   // 5 => Si input non vide, envoyer le formulaire
 
   // Exercice 4 : Ajax call
-  // 1 => Créer une function avec un parametre val
+  // 1 => Créer une function `addTodoItem` avec un parametre value
   // 2 => Créer dans cette function un requete post sur l'url '/add' à l'aide de l'objet new XMLHttpRequest();
   // 3 => Envoyer la requete a l'aide send et JSON.stringify()
   // 4  => A l'évènement onreadystatechange verifier le status et le readyState
