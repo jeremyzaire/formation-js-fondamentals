@@ -19,7 +19,7 @@ router.post('/add', function(req, res, next) {
       cssClass: ['btn', 'btn-sm', 'btn-success'],
     },
   };
-  res.json({ status: 200, data: rslt });
+  res.json({ status: 201, data: rslt });
   res.end();
 });
 

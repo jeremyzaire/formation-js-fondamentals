@@ -18,6 +18,27 @@ npm start
 
 ---
 
+## API
+
+### /add
+
+```
+POST /add
+    Body: {
+        val: ${value}
+    }
+    Response: HTTP 201
+```
+
+### /delete
+
+```
+PUT /delete
+    Response: HTTP 204
+```
+
+---
+
 Taper l'adresse suivante dans votre navigateur chrome.
 http://localhost:3000/
 
