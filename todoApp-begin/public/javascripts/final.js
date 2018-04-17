@@ -48,7 +48,8 @@
   // Exercice 4 : Ajax call
   // 1 => Créer une function `addTodoItem` avec un parametre value
   // 2 => Créer dans cette function un requete post sur l'url '/add' à l'aide de l'objet new XMLHttpRequest();
-  // 3 => Envoyer la requete a l'aide send et JSON.stringify()
-  // 4  => A l'évènement onreadystatechange verifier le status et le readyState
-  // 5 => SI readyState === 4 et request.status === 200 afficher la reponse du serveur a l'aide de JSON.parse();
+  // 3 => Préparer un header JSON pour cette requête
+  // 4 => Envoyer la requete a l'aide send et JSON.stringify()
+  // 5  => A l'évènement onreadystatechange verifier le status et le readyState
+  // 6 => SI readyState === 4 et request.status === 200 afficher la reponse du serveur a l'aide de JSON.parse();
 })();

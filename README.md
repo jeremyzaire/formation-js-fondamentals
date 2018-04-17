@@ -33,7 +33,7 @@ POST /add
 ### /delete
 
 ```
-PUT /delete
+GET /delete
     Response: HTTP 204
 ```
 
