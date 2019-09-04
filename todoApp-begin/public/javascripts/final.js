@@ -32,7 +32,7 @@
   // 2 => Créer un li avec l'attribut data-id="1" -> récuperer la valeur 1 dans todoItemData -> setAttribute()
   // 3 => Insérer dans le li un element span avec la valeur label de todoItemData
   // 4 => Insérer dans le li un un element a avec les classes suivantes "btn btn-sm btn-success" -> classList.add()
-  // 5 => Cette élement doit avoir comme valeur la propriétré "label" de l'objet todoItemData.button
+  // 5 => Cette élement doit avoir comme valeur textuelle la propriétré "label" de l'objet todoItemData.button
   // 6 => Inserer le li dans le ul
 
   // displayTodoItem(todoItemData);
