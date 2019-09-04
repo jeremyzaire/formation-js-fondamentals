@@ -1,11 +1,11 @@
 (function() {
-  console.log('Main script exercice go !!!');
+  console.log("Main script exercice go !!!");
   // Exercice 1 Javascript type
   // Déclarer un array nommé collection
-  // Insérer dans l'array 2 data de type string ('label one', 'done'), 1 data de type boolean, 1 data de type number
+  // Pousser dans l'array 2 data de type string ('label one', 'done'), 1 data de type boolean, 1 data de type number
   // Enlever la première entrée de l'array collection
   // Transformer la première entrée (string) du tableau en majuscule -> toUpperCase();
-  // Insérer cette valeur dans l'array collection
+  // Insérer au début cette valeur dans l'array collection
   // Créer une fonction nommée 'result' avec un paramètre (collection)
   // Cette fonction doit boucler sur l'array collection et logger chaque valeures du tableau -> loop for / console.log
   // Appeler la fonction result
