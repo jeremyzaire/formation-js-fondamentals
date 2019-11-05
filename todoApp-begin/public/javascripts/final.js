@@ -41,8 +41,8 @@
 
   // 1 => Récuper l'element form contenant l'id create
   // 2 => Ajouter un évènement submit à cette élement
-  // 4 => Verifier que la valeur de l'input nameTodo ne soit pas vide
-  // 5 => Si vide, ajouter une class 'has-warning' sur l'élement <div class="form-group "> et stopper l'évenement d'envoie du formulaire
+  // 3 => Verifier que la valeur de l'input nameTodo ne soit pas vide
+  // 4 => Si vide, ajouter une class 'has-warning' sur l'élement <div class="form-group "> et stopper l'évenement d'envoie du formulaire
   // 5 => Si input non vide, envoyer le formulaire
 
   // Exercice 4 : Ajax call
