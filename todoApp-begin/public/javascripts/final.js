@@ -9,6 +9,22 @@
   // Créer une fonction nommée 'result' avec un paramètre (collection)
   // Cette fonction doit boucler sur l'array collection et logger chaque valeures du tableau -> loop for / console.log
   // Appeler la fonction result
+  const collection = ["label one", "done", true, 12];
+  const label = collection.shift();
+  const uppercasedLabel = label.toUpperCase();
+
+  collection.unshift(uppercasedLabel);
+
+  function result(collection) {
+    // for (var i = 0; i < collection.length; i++) {
+    //   console.log(collection[i]);
+    // }
+    collection.forEach(element => {
+      console.log(element);
+    });
+  }
+
+  result(collection);
 
   // Exercice Object
   // Créer un objet appelé todoItemData
@@ -19,28 +35,102 @@
   // 5 => Afficher dans la console 'label one', 'btn-success', 1 -> console.log()
   // Bonus => afficher 'btn-sm' avec 2 notations différentes
 
-  // Exercice 2 Dom manipulation
+  const todoItemData = {
+    label: "label one",
+    id: 1,
+    button: { label: "done", classes: ["btn", "btn-sm", "btn-success"] }
+  };
 
-  // <ul>
-  //   <li data-id="1">
-  //     <span>Todo 1</span><a href="#" class="btn btn-sm btn-success">Done</a>
-  //   </li>
-  // <ul>
+  console.log({ todoItemData });
+  console.log(todoItemData.label);
+  console.log(todoItemData.button.classes[2]);
+  console.log(todoItemData.id);
 
-  // Récuperer le div qui contient l'ID result
-  // 1 => Créer un élement ul
-  // 2 => Créer un li avec l'attribut data-id="1" -> récuperer la valeur 1 dans todoItemData -> setAttribute()
-  // 3 => Insérer dans le li un element span avec la valeur label de todoItemData
-  // 4 => Insérer dans le li un un element a avec les classes suivantes "btn btn-sm btn-success" -> classList.add()
-  // 5 => Cette élement doit avoir comme valeur textuelle la propriétré "label" de l'objet todoItemData.button
-  // 6 => Inserer le li dans le ul
+  console.log(todoItemData["button"]["classes"][1]);
+  console.log(todoItemData.button.classes[1]);
+
+  function displayTodoItem(todoItemData) {
+    // Exercice 2 Dom manipulation
+
+    // <ul>
+    //   <li data-id="1">
+    //     <span>Todo 1</span><a href="#" class="btn btn-sm btn-success">Done</a>
+    //   </li>
+    // <ul>
+
+    // Récuperer le div qui contient l'ID result
+    // 1 => Créer un élement ul
+    const resultNode = document.getElementById("result");
+    const ulNode = resultNode.getElementsByTagName("ul")[0];
+    // 2 => Créer un li avec l'attribut data-id="1" -> récuperer la valeur 1 dans todoItemData -> setAttribute()
+    const liNode = document.createElement("li");
+    liNode.setAttribute("data-id", todoItemData.id);
+    // 3 => Insérer dans le li un element span avec la valeur label de todoItemData
+    const spanNode = document.createElement("span");
+    const spanTextNode = document.createTextNode(todoItemData.label);
+    spanNode.appendChild(spanTextNode);
+    liNode.appendChild(spanNode);
+    // 4 => Insérer dans le li un un element a avec les classes suivantes "btn btn-sm btn-success" -> classList.add()
+    const linkNode = document.createElement("a");
+    linkNode.classList.add("btn", "btn-sm", "btn-success");
+
+    linkNode.addEventListener("click", event => {
+      liNode.remove();
+    });
+
+    // 5 => Cette élement doit avoir comme valeur textuelle la propriétré "label" de l'objet todoItemData.button
+    const linkTextNode = document.createTextNode(todoItemData.button.label);
+    linkNode.appendChild(linkTextNode);
+    liNode.appendChild(linkNode);
+    // 6 => Inserer le li dans le ul
+    ulNode.appendChild(liNode);
+  }
 
   // displayTodoItem(todoItemData);
+
+  function createTodoItemData(label, id) {
+    return {
+      label,
+      id,
+      button: { label: "done", classes: ["btn", "btn-sm", "btn-success"] }
+    };
+  }
+
+  function exists(value) {
+    return Boolean(String(value));
+  }
+
+  function resetForm(nameTodoNode) {
+    nameTodoNode.value = "";
+    nameTodoNode.focus();
+  }
 
   // Exercice 3 Events Dom
 
   // 1 => Récuper l'element form contenant l'id create
+  const formNode = document.getElementById("create");
   // 2 => Ajouter un évènement submit à cette élement
+  const nameTodoNode = document.getElementById("nameTodo");
+  const formGroupNode = document.getElementsByClassName("form-group")[0];
+
+  nameTodoNode.addEventListener("focus", event => {
+    formGroupNode.classList.remove("has-warning");
+  });
+
+  formNode.addEventListener("submit", event => {
+    const nameTodo = nameTodoNode.value;
+
+    if (!exists(nameTodo)) {
+      formGroupNode.classList.add("has-warning");
+    } else {
+      displayTodoItem(createTodoItemData(nameTodo, Math.random()));
+      resetForm(nameTodoNode);
+    }
+
+    // call AJAX
+
+    event.preventDefault();
+  });
   // 3 => Verifier que la valeur de l'input nameTodo ne soit pas vide
   // 4 => Si vide, ajouter une class 'has-warning' sur l'élement <div class="form-group "> et stopper l'évenement d'envoie du formulaire
   // 5 => Si input non vide, envoyer le formulaire
