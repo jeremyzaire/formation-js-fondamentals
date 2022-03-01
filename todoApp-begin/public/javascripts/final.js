@@ -18,20 +18,37 @@
 
   // Créer une fonction nommée 'result' avec un paramètre (collection)
   // Cette fonction doit boucler sur l'array collection et logger chaque valeures du tableau -> loop for / console.log
-  var result = function(tab) {
-    for (let i=0 ; i < collection.length ; i++) {
-      console.log(collection[i]);
-    }
+  // var result = function(tab) {
+  //   for (let i=0 ; i < collection.length ; i++) {
+  //     console.log(collection[i]);
+  //   }
 
-    return collection;
-  }
+  //   return collection;
+  // }
 
-  // Appeler la fonction result
-  result(collection);
+  // // Appeler la fonction result
+  // result(collection);
 
   // Exercice Object
   // Créer un objet appelé todoItemData
   // 1 => Ajouter 2 keys nommées label et id avec comme value 'label one' et 1
+  const todoItemData = {
+    label: "label one",
+    id: 1, 
+    button : {
+      label: "done",
+      classes: ["btn", "btn-sm", "btn-success"]
+    }
+  }
+
+  console.log(todoItemData.label);
+  console.log(
+    todoItemData.button.classes[2]
+  );
+  console.log(todoItemData.id);
+  console.log(todoItemData.button.classes[1]);
+
+
   // 2 => Créer une troisieme key appelée button, cette key doit contenir un object
   // 3 => Dans cet objet button, créer une key nommée label avec la value 'done'
   // 4 => Ajouter une key 'classes' qui contient un array de 3 strings "btn", "btn-sm", "btn-success"
@@ -53,6 +70,36 @@
   // 4 => Insérer dans le li un un element a avec les classes suivantes "btn btn-sm btn-success" -> classList.add()
   // 5 => Cette élement doit avoir comme valeur textuelle la propriétré "label" de l'objet todoItemData.button
   // 6 => Inserer le li dans le ul
+
+  const result = document.getElementById("result");
+  const todoList = document.createElement("ul");
+  result.appendChild(todoList);
+  
+  function displayTodoItem(todoItemData) {
+    const todoItem = document.createElement("li");
+    todoItem.setAttribute("data-id", todoItemData.id);
+
+    const todoName = document.createElement("span");
+    const todoNameText = document.createTextNode(todoItemData.label);
+    todoName.appendChild(todoNameText);
+    todoItem.appendChild(todoName);
+
+    const todoLink = document.createElement("a");
+    const todoLinkText = document.createTextNode(todoItemData.button.label);
+    todoLink.appendChild(todoLinkText);
+
+    todoItemData.button.classes.forEach((cssClass) => 
+      todoLink.classList.add(cssClass)
+    );
+
+    todoItem.appendChild(todoLink);
+    todoList.appendChild(todoItem);
+  }
+
+
+  displayTodoItem(todoItemData);
+
+
 
   // displayTodoItem(todoItemData);
 
