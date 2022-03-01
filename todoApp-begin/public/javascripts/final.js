@@ -2,13 +2,36 @@
   console.log("Main script exercice go !!!");
   // Exercice 1 Javascript type
   // Déclarer un array nommé collection
+  // const collection = new Array[];
+  const collection = ["label one", "done", true, 42];
+
   // Pousser dans l'array 2 data de type string ('label one', 'done'), 1 data de type boolean, 1 data de type number
+  // collection.push("label one", "done", true, 42);
+
   // Enlever la première entrée de l'array collection
+  collection.shift();
+
   // Transformer la première entrée (string) du tableau en majuscule -> toUpperCase();
+  collection.unshift(collection[0].toUpperCase());
+
   // Insérer au début cette valeur dans l'array collection
+
   // Créer une fonction nommée 'result' avec un paramètre (collection)
   // Cette fonction doit boucler sur l'array collection et logger chaque valeures du tableau -> loop for / console.log
+  // var result = function(tab) {
+  //   for (let i=0; i<collection.length; i++) {
+  //     console.log(collection[i]);
+  //   }
+
+    return collection;
+
+    for (let elt in collection) {
+      console.log(elt);
+    }
+  }
+
   // Appeler la fonction result
+  result(collection);
 
   // Exercice Object
   // Créer un objet appelé todoItemData
