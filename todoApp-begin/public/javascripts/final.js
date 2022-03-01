@@ -18,16 +18,12 @@
 
   // Créer une fonction nommée 'result' avec un paramètre (collection)
   // Cette fonction doit boucler sur l'array collection et logger chaque valeures du tableau -> loop for / console.log
-  // var result = function(tab) {
-  //   for (let i=0; i<collection.length; i++) {
-  //     console.log(collection[i]);
-  //   }
+  var result = function(tab) {
+    for (let i=0 ; i < collection.length ; i++) {
+      console.log(collection[i]);
+    }
 
     return collection;
-
-    for (let elt in collection) {
-      console.log(elt);
-    }
   }
 
   // Appeler la fonction result
