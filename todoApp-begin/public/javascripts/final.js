@@ -110,6 +110,24 @@
   // 3 => Verifier que la valeur de l'input nameTodo ne soit pas vide
   // 4 => Si vide, ajouter une class 'has-warning' sur l'élement <div class="form-group "> et stopper l'évenement d'envoie du formulaire
   // 5 => Si input non vide, envoyer le formulaire
+  
+  const form = document.getElementById("create");
+  const nameTodo = document.getElementById("nameTodo");
+  const formGroup = form.querySelector(".form-group");
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    if (nameTodo.value === "") {
+      formGroup.classList.add("has-warning");
+      return false;
+    } else {
+      console.log("Submit");
+    }
+  });
+
+
+
 
   // Exercice 4 : Ajax call
   // 1 => Créer une function `addTodoItem` avec un parametre value
