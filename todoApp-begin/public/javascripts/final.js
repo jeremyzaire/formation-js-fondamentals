@@ -94,10 +94,10 @@
 
     todoItem.appendChild(todoLink);
     todoList.appendChild(todoItem);
+
+
+    todoLink.addEventListener('click', removeTodoItem);
   }
-
-
-  // displayTodoItem(todoItemData);
 
 
 
@@ -132,6 +132,17 @@
     formGroup.classList.remove("has-warning");
   })
 
+
+
+
+
+
+  // result.querySelector("li").addEventListener('click', (event) => {
+  //   event.stopPropagation();
+    
+  //   deleteTodoItem(this);
+  // })
+
   // Exercice 4 : Ajax call
   // 1 => Créer une function `addTodoItem` avec un parametre value
   // 2 => Créer dans cette function un requete post sur l'url '/add' à l'aide de l'objet new XMLHttpRequest();
@@ -161,7 +172,18 @@
     })
     .then(initTodo);
   }
+  
+  function removeTodoItem(event) {
+    event.stopPropagation();
 
+    const todoLink = event.currentTarget;
+    const todoItem = todoLink.parentNode;
+
+    fetch("/delete").then(() => {
+      todoLink.removeEventListener("click", removeTodoItem);
+      todoItem.remove();
+    });
+  }
 
 
 
