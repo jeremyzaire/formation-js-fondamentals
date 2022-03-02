@@ -122,12 +122,9 @@
       formGroup.classList.add("has-warning");
       return false;
     } else {
-      console.log("Submit");
+      addTodoItem(nameTodo.value);
     }
   });
-
-
-
 
   // Exercice 4 : Ajax call
   // 1 => Créer une function `addTodoItem` avec un parametre value
@@ -136,4 +133,25 @@
   // 4 => Envoyer la requete a l'aide send et JSON.stringify()
   // 5  => A l'évènement onreadystatechange verifier le status et le readyState
   // 6 => SI readyState === 4 et request.status === 200 afficher la reponse du serveur a l'aide de JSON.parse();
+
+
+  const responseJson = (response) => response.json();
+  function addTodoItem(value) {
+    fetch("/add", {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ val: value })
+    }).then(responseJson)
+    .then(({ data }) => {
+      displayTodoItem(data);
+    });
+
+  }
+
+
+
+
 })();
