@@ -97,7 +97,7 @@
   }
 
 
-  displayTodoItem(todoItemData);
+  // displayTodoItem(todoItemData);
 
 
 
