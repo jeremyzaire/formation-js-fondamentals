@@ -34,20 +34,17 @@
   // 1 => Ajouter 2 keys nommées label et id avec comme value 'label one' et 1
   const todoItemData = {
     label: "label one",
-    id: 1, 
-    button : {
+    id: 1,
+    button: {
       label: "done",
-      classes: ["btn", "btn-sm", "btn-success"]
-    }
-  }
+      classes: ["btn", "btn-sm", "btn-success"],
+    },
+  };
 
   console.log(todoItemData.label);
-  console.log(
-    todoItemData.button.classes[2]
-  );
+  console.log(todoItemData.button.classes[2]);
   console.log(todoItemData.id);
   console.log(todoItemData.button.classes[1]);
-
 
   // 2 => Créer une troisieme key appelée button, cette key doit contenir un object
   // 3 => Dans cet objet button, créer une key nommée label avec la value 'done'
@@ -74,7 +71,7 @@
   const result = document.getElementById("result");
   const todoList = document.createElement("ul");
   result.appendChild(todoList);
-  
+
   function displayTodoItem(todoItemData) {
     const todoItem = document.createElement("li");
     todoItem.setAttribute("data-id", todoItemData.id);
@@ -88,18 +85,15 @@
     const todoLinkText = document.createTextNode(todoItemData.button.label);
     todoLink.appendChild(todoLinkText);
 
-    todoItemData.button.classes.forEach((cssClass) => 
+    todoItemData.button.classes.forEach((cssClass) =>
       todoLink.classList.add(cssClass)
     );
 
     todoItem.appendChild(todoLink);
     todoList.appendChild(todoItem);
 
-
-    todoLink.addEventListener('click', removeTodoItem);
+    todoLink.addEventListener("click", removeTodoItem);
   }
-
-
 
   // displayTodoItem(todoItemData);
 
@@ -110,12 +104,12 @@
   // 3 => Verifier que la valeur de l'input nameTodo ne soit pas vide
   // 4 => Si vide, ajouter une class 'has-warning' sur l'élement <div class="form-group "> et stopper l'évenement d'envoie du formulaire
   // 5 => Si input non vide, envoyer le formulaire
-  
+
   const form = document.getElementById("create");
   const nameTodo = document.getElementById("nameTodo");
   const formGroup = form.querySelector(".form-group");
 
-  form.addEventListener('submit', (event) => {
+  form.addEventListener("submit", (event) => {
     event.preventDefault();
 
     if (nameTodo.value === "") {
@@ -126,11 +120,10 @@
     }
   });
 
-
-  nameTodo.addEventListener('focus', (event) => {
+  nameTodo.addEventListener("focus", (event) => {
     event.stopPropagation();
     formGroup.classList.remove("has-warning");
-  })
+  });
 
   // Exercice 4 : Ajax call
   // 1 => Créer une function `addTodoItem` avec un parametre value
@@ -140,28 +133,27 @@
   // 5  => A l'évènement onreadystatechange verifier le status et le readyState
   // 6 => SI readyState === 4 et request.status === 200 afficher la reponse du serveur a l'aide de JSON.parse();
 
-
   const responseJson = (response) => response.json();
-  
+
   function initTodo() {
     nameTodo.value = "";
   }
 
   function addTodoItem(value) {
     fetch("/add", {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify({ val: value })
-    }).then(responseJson)
-    .then(({ data }) => {
-      displayTodoItem(data);
+      body: JSON.stringify({ val: value }),
     })
-    .then(initTodo);
+      .then(responseJson)
+      .then(({ data }) => {
+        displayTodoItem(data);
+      })
+      .then(initTodo);
   }
-  
 
   function removeTodoItem(event) {
     event.stopPropagation();
@@ -174,5 +166,4 @@
       todoItem.remove();
     });
   }
-
 })();
