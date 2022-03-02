@@ -126,6 +126,12 @@
     }
   });
 
+
+  nameTodo.addEventListener('focus', (event) => {
+    event.stopPropagation();
+    formGroup.classList.remove("has-warning");
+  })
+
   // Exercice 4 : Ajax call
   // 1 => Créer une function `addTodoItem` avec un parametre value
   // 2 => Créer dans cette function un requete post sur l'url '/add' à l'aide de l'objet new XMLHttpRequest();
@@ -136,6 +142,11 @@
 
 
   const responseJson = (response) => response.json();
+  
+  function initTodo() {
+    nameTodo.value = "";
+  }
+
   function addTodoItem(value) {
     fetch("/add", {
       method: 'POST',
@@ -147,8 +158,8 @@
     }).then(responseJson)
     .then(({ data }) => {
       displayTodoItem(data);
-    });
-
+    })
+    .then(initTodo);
   }
 
 
