@@ -1,3 +1,5 @@
+# Formation Exercise 1
+
 ## Bienvenue à la formation "Javascript Foundamentals" par Clever Institut
 
 Ce dossier comprend :
